@@ -5,10 +5,15 @@ const usuariosGet = (req, res = response) =>
     msg: "get API - controlador",
   });
 
-const usuariosPost = (req, res = response) =>
+const usuariosPost = (req, res = response) => {
+  const { nombre, edad } = req.body;
+
   res.json({
     msg: "post API - controlador",
+    nombre,
+    edad,
   });
+};
 
 const usuariosPut = (req, res = response) =>
   res.json({
@@ -30,5 +35,5 @@ module.exports = {
   usuariosPost,
   usuariosPut,
   usuariosPatch,
-  usuariosDelete
+  usuariosDelete,
 };
